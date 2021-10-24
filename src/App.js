@@ -94,7 +94,7 @@ function App() {
         <div>
           <Formik
             initialValues={{
-              url: "",
+              url: "https://jsonplaceholder.typicode.com/todos",
               query_data: [{}],
               header_data: [{}],
               method: "GET",
