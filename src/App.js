@@ -107,24 +107,26 @@ function App() {
             {({ values }) => (
               <Form>
                 <div className="form-group">
-                  <Field name="method" as="select">
-                    <option value="GET"> GET </option>
-                    <option value="POST"> POST </option>
-                    <option value="PUT"> PUT </option>
-                    <option value="PATCH"> PATCH </option>
-                    <option value="DELETE"> DELETE </option>
-                  </Field>
-                  <Field
-                    required
-                    type="url"
-                    name="url"
-                    placeholder="https://www.example.com"
-                    className="form-control"
-                  />
-                  <div className="form-group">
-                    <button className="btn btn-primary" type="submit">
-                      Submit
-                    </button>
+                  <div className="input-group mb-4">
+                    <Field name="method" as="select">
+                      <option value="GET"> GET </option>
+                      <option value="POST"> POST </option>
+                      <option value="PUT"> PUT </option>
+                      <option value="PATCH"> PATCH </option>
+                      <option value="DELETE"> DELETE </option>
+                    </Field>
+                    <Field
+                      required
+                      type="url"
+                      name="url"
+                      placeholder="https://www.example.com"
+                      className="form-control"
+                    />
+                    <div className="form-group">
+                      <button className="btn btn-primary" type="submit">
+                        Submit
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <Tabs
@@ -231,7 +233,9 @@ function App() {
               className="nav nav-tabs"
             >
               <Tab eventKey="body" title="Body">
-                <pre>{JSON.stringify(response, null, 2)}</pre>
+                <pre className="scroll">
+                  {JSON.stringify(response, null, 2)}
+                </pre>
               </Tab>
               <Tab eventKey="response" title="Response">
                 <pre>{JSON.stringify(responseHeaders, null, 2)}</pre>
